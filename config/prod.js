@@ -1,10 +1,6 @@
 //prod.js
 module.exports = {
-  azureCdnAddress: process.env.CDN_URI,
-  googleClientID: process.env.GOOGLE_CLIENT_ID,
-  googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  mongoURI: process.env.MONGO_URI,
-  cookieKey: process.env.COOKIE_KEY,
+  userURI: process.env.USERDB_URI,
+  catalogURI: process.env.CATALOGDB_URI,
   scraperFromUrl: process.env.SCRAPER_URI,
-  jwtKey: process.env.JWT_KEY,
 };
