@@ -24,7 +24,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon",
     "start:dev": "nodemon",
-    "hello": "ts-node hello"
+    "hello": "ts-node hello",
+    "newreleases": "ts-node newreleases"
   },
   "keywords": [],
   "author": "",
