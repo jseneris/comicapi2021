@@ -28,10 +28,12 @@ export default async function hello() {
 
   // console.log(localTitles);
 
-  await newReleases(29);
+  await newReleases(45);
   // console.log('finished');
   // catalogConnection.close();
   // console.log('finished2');
+  process.exit(0);
+  return;
 }
 
 hello();
