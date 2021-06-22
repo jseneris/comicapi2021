@@ -7,6 +7,7 @@ import { Title, TitleDoc } from '../models/Title';
 import { Issue } from '../models/Issue';
 
 export const saveIssues = async (issues: IssueInterface[]) => {
+  console.log('here');
   issues.sort((a: IssueInterface, b: IssueInterface) => {
     if (a.publisherValue === b.publisherValue) {
       if (a.titleValue === b.titleValue) {
@@ -18,6 +19,8 @@ export const saveIssues = async (issues: IssueInterface[]) => {
       return a.publisherValue > b.publisherValue ? 1 : -1;
     }
   });
+
+  console.log('here2');
 
   // var lastPub: PublisherDoc | null = null;
   var lastPub: any | null = null;
@@ -42,6 +45,7 @@ export const saveIssues = async (issues: IssueInterface[]) => {
           }).save();
         }
         lastPub = publisherRec;
+        console.log('saved pub');
       } catch (err) {
         console.log(err);
       }
@@ -65,6 +69,7 @@ export const saveIssues = async (issues: IssueInterface[]) => {
           }
         }
         lastTitle = titleRec;
+        console.log('saved title');
       } catch (err) {
         console.log(err);
       }
@@ -94,6 +99,7 @@ export const saveIssues = async (issues: IssueInterface[]) => {
         });
         await issueRec.save();
       }
+      console.log('saved issue');
     } catch (err) {
       console.log(err);
     }
