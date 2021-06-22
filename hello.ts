@@ -28,7 +28,7 @@ export default async function hello() {
 
   // console.log(localTitles);
 
-  await newReleases(45);
+  await newReleases(49);
   // console.log('finished');
   // catalogConnection.close();
   // console.log('finished2');
