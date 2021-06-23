@@ -7,7 +7,6 @@ import { Title, TitleDoc } from '../models/Title';
 import { Issue } from '../models/Issue';
 
 export const saveIssues = async (issues: IssueInterface[]) => {
-  console.log('here');
   issues.sort((a: IssueInterface, b: IssueInterface) => {
     if (a.publisherValue === b.publisherValue) {
       if (a.titleValue === b.titleValue) {
@@ -19,8 +18,6 @@ export const saveIssues = async (issues: IssueInterface[]) => {
       return a.publisherValue > b.publisherValue ? 1 : -1;
     }
   });
-
-  console.log('here2');
 
   // var lastPub: PublisherDoc | null = null;
   var lastPub: any | null = null;
@@ -45,9 +42,9 @@ export const saveIssues = async (issues: IssueInterface[]) => {
           }).save();
         }
         lastPub = publisherRec;
-        console.log('saved pub');
+        console.log('saved pub', issue.publisherValue);
       } catch (err) {
-        console.log(err);
+        console.log('ERROR - saving publisher: ', err);
       }
     }
 
@@ -69,9 +66,9 @@ export const saveIssues = async (issues: IssueInterface[]) => {
           }
         }
         lastTitle = titleRec;
-        console.log('saved title');
+        console.log('saved title', issue.titleValue);
       } catch (err) {
-        console.log(err);
+        console.log('ERROR - saving issue: ', err);
       }
     }
 
@@ -99,9 +96,9 @@ export const saveIssues = async (issues: IssueInterface[]) => {
         });
         await issueRec.save();
       }
-      console.log('saved issue');
+      console.log('saved issue', issue.titleValue, issue.issueNumberValue);
     } catch (err) {
-      console.log(err);
+      console.log('ERROR - saving issue: ', err);
     }
   }
 };
