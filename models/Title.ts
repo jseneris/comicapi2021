@@ -1,9 +1,10 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { ObjectId, Schema } from 'mongoose';
 import { Utilities } from '../services/generate-seo';
 import { catalogConnection } from '../connection';
 
 import { PublisherDoc } from './Publisher';
 import { LocalTitleDoc } from './LocalTitle';
+import { IssueDoc } from './Issue';
 
 interface TitleAttrs {
   name: string;
@@ -14,6 +15,7 @@ interface TitleAttrs {
   // issueEnd: string;
   // lastUpdate: Date;
   // loneStarId: string;
+  // firstIssue: IssueDoc;
   publisher: PublisherDoc;
   localTitle: LocalTitleDoc;
 }
@@ -25,6 +27,8 @@ export interface TitleDoc extends mongoose.Document {
   yearEnd: number;
   issueBegin: string;
   issueEnd: string;
+  firstIssue: mongoose.Types.ObjectId;
+  // firstIssue: IssueDoc;
   lastUpdate: Date;
   loneStarId: string;
   publisher: PublisherDoc;
@@ -44,6 +48,11 @@ const titleSchema = new Schema(
     yearEnd: Number,
     issueBegin: String,
     issueEnd: String,
+    // firstIssue: mongoose.Types.ObjectId,
+    firstIssue: {
+      type: mongoose.Types.ObjectId,
+      ref: 'Issue',
+    },
     LastUpdate: Date,
     loneStarId: String,
     oldPublisherId: Number,

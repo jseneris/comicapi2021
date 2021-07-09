@@ -17,6 +17,7 @@ import { errorHandler } from './middlewares/error-handler';
 import { catalogPublisherRouter } from './routes/catalog/publisher';
 import { catalogTitleRouter } from './routes/catalog/title';
 import { catalogIssueRouter } from './routes/catalog/issue';
+import { utilsTitlerRouter } from './routes/utils/title';
 // import { catalogSingleIssueRouter } from './routes/catalog/single-issue';
 
 // import { collectionQueryRouter } from './routes/collection/collection';
@@ -67,6 +68,8 @@ app.use(json());
 app.use(catalogPublisherRouter);
 app.use(catalogTitleRouter);
 app.use(catalogIssueRouter);
+
+app.use(utilsTitlerRouter);
 // app.use(catalogSingleIssueRouter);
 
 // app.use(collectionQueryRouter);
