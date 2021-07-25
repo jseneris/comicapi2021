@@ -1,0 +1,13 @@
+catalogPublisherRouter
+  /api/catalog/publisher
+  /api/catalog/publisher/:publisherName
+
+catalogTitleRouter
+  /api/catalog/title
+  /api/catalog/:publisherName/:titleName
+
+catalogIssueRouter
+  /api/catalog/issue
+
+utilsTitlerRouter
+  /api/utils/publisher

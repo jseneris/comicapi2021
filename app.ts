@@ -14,10 +14,8 @@ import { errorHandler } from './middlewares/error-handler';
 // import { signInRouter } from './routes/user/signin';
 // import { signOutRouter } from './routes/user/signout';
 
-import { catalogPublisherRouter } from './routes/catalog/publisher';
-import { catalogTitleRouter } from './routes/catalog/title';
-import { catalogIssueRouter } from './routes/catalog/issue';
 import { utilsTitlerRouter } from './routes/utils/title';
+import { catalogRouter } from './routes/catalog/catalog';
 // import { catalogSingleIssueRouter } from './routes/catalog/single-issue';
 
 // import { collectionQueryRouter } from './routes/collection/collection';
@@ -65,9 +63,7 @@ app.use(json());
 // app.use(signInRouter);
 // app.use(signOutRouter);
 
-app.use(catalogPublisherRouter);
-app.use(catalogTitleRouter);
-app.use(catalogIssueRouter);
+app.use(catalogRouter);
 
 app.use(utilsTitlerRouter);
 // app.use(catalogSingleIssueRouter);
