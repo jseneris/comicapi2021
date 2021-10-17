@@ -7,7 +7,7 @@ import { json } from 'body-parser';
 import cors from 'cors';
 import { NotFoundError } from './errors/not-found-error';
 import { errorHandler } from './middlewares/error-handler';
-// import { currentUserRouter } from './routes/user/current-user';
+import { currentUserRouter } from './routes/user/current-user';
 
 // import { catalogQueryRouter } from './routes/catalog/catalog';
 // import { signUpRouter } from './routes/user/signup';
@@ -56,7 +56,7 @@ app.use(json());
 //   })
 // );
 
-// app.use(currentUserRouter);
+app.use(currentUserRouter);
 
 // app.use(catalogQueryRouter);
 // app.use(signUpRouter);
