@@ -10,6 +10,7 @@ router.get('/api/user/currentuser', currentUser, async (req, res) => {
     auth0Id: req.currentUser?.sub,
   });
 
+  console.log('here');
   let retval = null;
   if (user) {
     console.log('user', user);
