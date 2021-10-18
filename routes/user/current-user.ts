@@ -5,7 +5,7 @@ import { User, UserDoc } from '../../models/User';
 const router = express.Router();
 
 router.get('/api/user/currentuser', currentUser, async (req, res) => {
-  console.log('currentUser', currentUser);
+  console.log('currentUser', req.currentUser);
   const user = await User.findOne({
     auth0Id: req.currentUser?.sub,
   });
