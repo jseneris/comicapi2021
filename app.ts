@@ -16,6 +16,7 @@ import { currentUserRouter } from './routes/user/current-user';
 
 import { utilsTitlerRouter } from './routes/utils/title';
 import { catalogRouter } from './routes/catalog/catalog';
+import { adminRouter } from './routes/admin/admin';
 // import { catalogSingleIssueRouter } from './routes/catalog/single-issue';
 
 // import { collectionQueryRouter } from './routes/collection/collection';
@@ -64,6 +65,7 @@ app.use(currentUserRouter);
 // app.use(signOutRouter);
 
 app.use(catalogRouter);
+app.use(adminRouter);
 
 app.use(utilsTitlerRouter);
 // app.use(catalogSingleIssueRouter);
